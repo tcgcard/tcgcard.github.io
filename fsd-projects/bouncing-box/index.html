@@ -21,9 +21,9 @@
 
       .board {
         height: 100vh;
-        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiA5ol16DmPGkTTVgpuox6RNW7pNLPy23Ioa31PU2Be_2Z-xbja3PdrbV7:https://www.vibe.com/wp-content/uploads/2024/02/IMG_7936.jpg&s=10);
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZBfqILgxJg8s-6btaQ1pCCAmcadD4Q35ReVYeLWXB8-H6x3_pqRmgUtnV:https://artist99.cdn107.com/efd/efd945d7992c9d435347b17345eaa0bc_xl.jpg&s=10);
       }
-    </style>
+    </style>l.
     <!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
   </head>
 
@@ -74,11 +74,12 @@
         // TODO 2 - Variable declarations
           var positionX = 0;
           var points = 0;
-           var speed = 10;
+          var speed = 10;
           var positionY = 200;
           var speedY = 10;
-          positionY = 200;
-      
+          var positionY = 200;
+          var boardHeight = jQuery(window).height();
+          var randNum = Math.random() * 100;
 
         /**
          * This Function will be called 20 times/second.
@@ -115,12 +116,14 @@
          * - move the box to the left side of the screen.
          */
         function handleBoxClick() {
-         positionX = 0;
-         points++;
-         changeBoxText(points);
-        
+        changeBoxText(points);
+        points++;
+        speed += 3;
         speed = 3 * points + 10;
-
+        var randX = Math.random() * (boardWidth - 150);
+        var randY = Math.random() * (boardHeight - 150)
+        positionX = randX;
+        positionY = randY;
         }
 
 
